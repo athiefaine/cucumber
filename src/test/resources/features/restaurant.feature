@@ -9,8 +9,9 @@ Feature: Order computation
 			| yakisoba    | 11.50 |
 			| kimchi      | 4.0   |
 			| sukiyaki    | 10.25 |
-		When the customer orders 2 gyoza
-		And  the customer orders 3 kimchi
-		And  the customer orders 1 okonomiyaki 
-		And  the customer orders 2 sukiyaki
-		Then the order amount should be 65.50
+		And the customer ordered 2 gyoza
+		And  the customer ordered 3 kimchi
+		And  the customer ordered 1 okonomiyaki
+		And  the customer ordered 2 sukiyaki
+		When the waiter computes the bill
+		Then the bill amount should be 65.50

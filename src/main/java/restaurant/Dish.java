@@ -3,7 +3,7 @@ package restaurant;
 public class Dish {
 	
 	private String name;
-	private Float price;
+	private Double price;
 	
 	public String getName() {
 		return name;
@@ -11,10 +11,10 @@ public class Dish {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Float getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(Float price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 	

@@ -15,10 +15,13 @@ public class RestaurantJava8Stepdefs implements En {
 		Given("the menu contains the following dishes", (final DataTable dishes) -> {
 			orderHelper = new OrderHelper(dishes.asList(Dish.class));
 		});
-		When("the customer orders (\\d+) (.+)", (final Integer quantity, final String dishName) -> {
+		Given("the customer ordered (\\d+) (.+)", (final Integer quantity, final String dishName) -> {
 			orderHelper.orderDish(dishName, quantity);
 		});
-		Then("the order amount should be (\\d+\\.\\d+)", (final Float amount) -> {
+		When("the waiter computes the bill", () -> {
+			orderHelper.computeBill();
+		});
+		Then("the bill amount should be (\\d+\\.\\d+)", (final Double amount) -> {
 			Assert.assertEquals(amount, orderHelper.getAmount());
 		});
 	}
